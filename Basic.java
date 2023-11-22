@@ -220,24 +220,74 @@ public class Basic {
 
         // break
         System.out.println("========== Break ============");
-        for(i=0;i<5;i++){
-            if(i==3){
+        for (i = 0; i < 5; i++) {
+            if (i == 3) {
                 break;
             }
             System.out.println(i);
         }
 
-        // Continue 
+        // Continue
         System.out.println("============= Continue ===========");
-        for(i=0;i<5;i++){
-            if(i==3){
+        for (i = 0; i < 5; i++) {
+            if (i == 3) {
                 continue;
             }
             System.out.println(i);
         }
 
+        // Condition Ternary
+        int Age_1 = 19;
+        int Age_2 = 10;
+        String Chaine = (Age_1 > Age_2) ? "Age_1 > Age_2" : "Age_1 <= Age_2";
+        System.out.println("Chaine est :" + Chaine);
 
+        // exercise Utilsation Break et Continue dans Boucle while et for et do while
+        int Totale = 0;
+        for (i = 0; i < 6; i++) {
+            if (i == 3) {
+                continue;
+            }
+            Totale += 2;
+        }
+        // i=0 t=2 * i=1 t=4 * i=2 t=6 * i=3 ... * i=4 t=8 * i=5 t=10
+        System.out.println("Totale est :" + Totale);
+
+        Totale = 0;
+        for (i = 0; i < 6; i++) {
+            if (i == 3)
+                break;
+            Totale += 2;
+        }
+        // i=0 t=2 * i=1 t=4 * i=2 t=6 * i=3 ---- break
+        System.out.println("Totale est :" + Totale);
+
+        // Dans Boucle imbriquées :
+        for (i = 0; i < 10; i++) {
+            forBreak: for (int line = 0; line < 10; line++) {
+                for (int column = 0; column < 10; column++) {
+                    if (line == 7 && column == 7) {
+                        break forBreak;
+                    }
+                    System.out.printf("%dx%dx%d ", column, line, i);
+                }
+                System.out.println();
+            }
+            System.out.println();
+        }
+
+        // TP Boucle
+        for (int I = 4, hrt = 1; I > 0; I--, hrt += 2) {
+            for (int j = 0; j < I; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < hrt; j++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
 
     }
+
 
 }

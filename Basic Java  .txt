@@ -14,6 +14,8 @@ Basic Java :
 * Ex : /*    Text   */
 
 
+=====================================================================================================
+
 
 2) Variables : 
 --------------
@@ -28,7 +30,6 @@ Basic Java :
 * Name = Value;
 
 Nom => Identificateur
-
 
 
 2.3) Pour Afficher ou print Variable :
@@ -70,6 +71,8 @@ Les noms peuvent aussi commencer par $ et _ (mais nous ne l'utiliserons pas dans
 Les noms sont sensibles à la casse ("myVar" et "myvar" sont des variables différentes)
 Les mots réservés (comme les mots-clés Java, tels que intou boolean) ne peuvent pas être utilisés comme noms
 
+
+=====================================================================================================
 
 
 3) Types de données Java : 
@@ -247,17 +250,29 @@ Notation : Hexadécimal (\uxxx)
 -------------------------
 La conversion de type consiste à attribuer une valeur d’un type de données primitif à un autre type.
 
+
+
 3.3.1) Conversion ( Type Conversion ou Type Casting impilicite ) :
 ------------------------------------------------------------------
+* Une Conversion élargisante : 
+------------------------------
 
 - La conversion implicite automatiquement si le type de données de destination est plus large que le type source. 
 - byte => short => char => int => long => float => double 
 
+
+
 3.3.2) Casting ( Type Casting Explicite ) : 
 -------------------------------------------
+* Une Conversion restrictive :
+------------------------------
+Transtypage (cast) :
 
 - Convertir un type de données en un autre, mais de manière explicite.
 - Vous utlisez (Type) pour effectuer un casting.
+
+
+==========================================================================================================
 
 
 4) Operateurs
@@ -368,6 +383,8 @@ NB : incrémente ou décrémentée  la valeur de la variable après qu'elle a é
 * ++m => un opérateur de post incrémentation (placé à droite). => (postfixe)
 * --m => un opérateur de post décrémentation (placé à droite). => (postfixe)
 
+* Opérateur de post-incrémentation => Utilisation Dans une instruction "System.out.println()" => La valeur actuelle de "x"
+sera incrémentée de 2 après l'évaluatiion de l'expression.
 
 Example :
 ----------
@@ -468,6 +485,7 @@ false : true
 4.5.3 ) Opérateur Conditionnel : 
 --------------------------------
 * L'opérateur conditionnel, souvent appelé l'opérateur ternaire.
+* Utiliser pour affecter une valeur à une variable en fonction d'une fonction d'une Condition.
 
 Syntaxe : 
 ---------
@@ -476,9 +494,14 @@ Condition ? expression_si_vraie : expression_si_fausse;
 Example : ( x >= 10 ? a : b ) ;
 
 
+===========================================================================================================
+
+
 
 5) INSTRUCTIONS DE BRANCHEMENT CONDITIONNEL :
 ---------------------------------------------
+
+Nb : Quand l'instruction contient une seul instruction ne pas nécessaire utiliser les Accolades.
 
 5.1) Instruction if :
 ---------------------
@@ -499,6 +522,10 @@ else { if condition is false}
 if( cond1 ) { // executer Code is true   }
 else if (cond2) { executer code if cond1 is false }
 else { executer code if cond2 is false}
+
+
+===============================================================================================================
+
 
 6) Instruction Switch :
 -----------------------
@@ -522,10 +549,12 @@ Switch(expression){
 5* Si l'instruction default est la dernière instruction d'un bloc switch, la pause n'est pas nécessaire.
 
 
+===========================================================================================================
 
-6) Boucles 
+7) Boucles 
 -----------
-6.1) Boucle While :
+
+7.1) Boucle While :
 -------------------
 * L'instruction while exécute continuellement un bloc d'instructions lorsqu'une condition particulière est true.
 
@@ -534,8 +563,7 @@ While(Condition){
 }
 
 
-
-6.2) Boucle do while :
+7.2) Boucle do while :
 ----------------------
 * Cette boucle va exécutez le bloc de code une fois, avant de vérifier si la condition est vraie, alors il le fera répétez la boucle tant que la condition est vraie.
 
@@ -544,8 +572,7 @@ do{
 }while(condition);
 
 
-
-6.3) Boucle for :
+7.3) Boucle for :
 -----------------
 * Lorsque vous savez exactement combien de fois vous souhaitez parcourir un bloc de code, utilisez la boucle for au lieu d'une boucle while.
 
@@ -561,7 +588,7 @@ for (statement 1; statement 2; statement 3) {
 * L'L'instruction 3 est exécutée (à chaque fois) après l'exécution du bloc de code.
 
 
-6.4) Boucle foreach : 
+7.4) Boucle foreach : 
 ---------------------
 * boucle est utilisée exclusivement pour parcourir les éléments d'un tableau.
 
@@ -570,11 +597,42 @@ for (type variableName : arrayName) {
 }
 
 
-6.5)  break et Continue : 
+7.5)  break et Continue : 
 -------------------------
-* L'instruction break peut également être utilisée pour sortir d'un boucle.
-* L'instruction continue interrompt une itération (dans la boucle), si une condition spécifiée se produit, et continue avec l'itération suivante dans la boucle.
+7.5.1) Break : 
+--------------
+* L'instruction break permet de mettre fin à l'exécution conditionnelle d'une boucle, que ce soit une boucle "for", "while", "do while" ou "switch".
+* En cas de boucles imbriquées, l'instruction break a pour effet de terminer uniquement la boucle la plus interne qui l'englobe.
+* Pour interrompre une boucle imbriquée en Java, on peut utiliser l'instruction break avec une étiquette. 
+  Cette étiquette, souvent désignée comme "Boucle", est associée à une condition. 
+  Lorsque la condition devient vraie, l'instruction break avec l'étiquette est activée, provoquant la sortie de la boucle associée à cette étiquette. En résumé, pour quitter la boucle, on place une étiquette devant la condition qui, si elle est vraie, déclenche l'instruction break avec l'étiquette.
 
-Utiliser dans un bloc de condition pour sauter ou continue.
+
+7.5.2) Continue :
+-----------------
+* L'instruction continue permet exclusivement de mettre fin au tour de boucle en cours le plus proche et de passer directement au tour suivant, sous condition.
+* l'utilisation de l'instruction continue est possible pour passer au tour suivant dans le contexte de boucles imbriquées.
+* Lorsqu'on utilise l'instruction continue avec des boucles imbriquées, il est nécessaire d'associer une étiquette à la boucle spécifique où l'on souhaite démarrer un nouveau tour.
+  De manière similaire à l'utilisation de l'étiquette avec l'instruction break, l'étiquette pour l'instruction continue doit être positionnée au-dessus de la boucle à laquelle elle est liée.
+
+
+=========================================================================================================
+
+
+Example : Array 
+--------------- 
+
+    *
+   ***
+  *****
+ *******
+*********
+
+
+8) : Array :
+-------------------
+
+
+
 
 
