@@ -1,4 +1,5 @@
 import java.util.*;
+//import java.util.Scanner;
 
 public class Basic {
 
@@ -288,23 +289,26 @@ public class Basic {
         }
 
         // TP2 : Exercice
-        for(int I =5; I >0; I--){
-            for(int j=0; j< I; j++){
+        for (int I = 5; I > 0; I--) {
+            for (int j = 0; j < I; j++) {
                 System.out.print("*");
             }
             System.out.println("");
         }
 
         // TP3 : Exercice
-        for(int I=5; I>0; I--){
-            for(int J=1; J<I; J++){
-              System.out.print(" ");   
+        for (int I = 5; I > 0; I--) {
+            for (int J = 1; J < I; J++) {
+                System.out.print(" ");
             }
-            for(int L=0; L<6-I; L++ ){
-              System.out.print("*");  
+            for (int L = 0; L < 6 - I; L++) {
+                System.out.print("*");
             }
             System.out.println("");
-         }
+        }
+
+    
+
     }
 
 }
