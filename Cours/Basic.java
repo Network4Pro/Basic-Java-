@@ -1,3 +1,4 @@
+package Cours;
 import java.util.*;
 //import java.util.Scanner;
 
@@ -154,7 +155,7 @@ public class Basic {
         System.out.println(x >= 0 ? x : -x);
 
         // Exercice if et else if et else
-        Scanner Sc = new java.util.Scanner(System.in);
+        Scanner_1 Sc = new java.util.Scanner(System.in);
         System.out.println("Enter Premier Numbre :");
         int numbre1 = Sc.nextInt();
         System.out.println("Entre Deuxiéme Numbre : ");
@@ -308,6 +309,8 @@ public class Basic {
         }
 
     
+    
+
 
     }
 

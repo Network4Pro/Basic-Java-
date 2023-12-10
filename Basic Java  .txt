@@ -79,20 +79,20 @@ Les mots réservés (comme les mots-clés Java, tels que intou boolean) ne peuve
 --------------------------
 
 En java, Il y a deux types de variables :
-* type simple ou primitif 
-* Type complexe ou des objets 
+* Type Simple ou primitif.
+* Type Complexe ou des objets.
 
 
 3.1) Type de données primitifs 
 -------------------------------
-byte    : 1 bytes
-short   : 2 bytes
-int     : 4 bytes
-long    : 8 bytes
-float   : 4 bytes
-double  : 8 bytes 
-boolean : 1 bytes
-char    : 2 bytes
+Byte    : 1 bytes
+Short   : 2 bytes
+Int     : 4 bytes
+Long    : 8 bytes
+Float   : 4 bytes
+Double  : 8 bytes 
+Boolean : 1 bytes
+Char    : 2 bytes
 
 Les valeur par default pour les champs de class : 
 -------------------------------------------------
@@ -619,22 +619,114 @@ for (type variableName : arrayName) {
 =========================================================================================================
 
 
-Example : Array 
---------------- 
+TP 
 
-*****
-****
-***
-**
-*
+==========================================================================================================
 
-8) : Array :
--------------------
+ 8) Concatenate String : 
+-----------------------
 
- ***
-******
+* L'opérateur + :
+----------------- 
+  - Peut être utilisé entre les chaînes pour combinez-les: 
+Chaine1 + Chaine2 = Chaine1Chaine2
 
 
+*  Méthode concat() : 
+---------------------
+  - Utilisation c'est Méthode pour concaténer deux chaînes.
+Chaine1.concat(Chaine2)
+
+* Nombre et Chaine =>   le résultat sera une concaténation de chaînes.
+
+NB: Lorsque concaténer  de types différents  avec des chaînes (String) 
+=> Java gère automatiquement la conversion des autres types en chaînes.
+
+* Special Characters :
+---------------------
+
+* Caractère d'échappement antislash.
+\"  =>  "
+\'  =>  '
+\\  =>  \
+\n  => Retour à La Ligne
+\t  => Tabulation
+\f  => Saut De Page
+
+============================================================================================
+
+9) Convertir String => Nombre   ou  Nombre => String :
+------------------------------------------------------
+
+Nombre => String : 
+------------------
+int Nb = 10; 
+String Chaine1 = String.valueof(int);
+
+
+String => Nombre :
+------------------
+String Chaine2 = "18"
+Method 1 (valueof)  : int nb1 = Integer.parseInt(Chaine2)
+Method 2 (parseInt) : int nb2 = Integer.valueof(chaine2)
+
+
+Différent entre Method ( parseInt )  et  ( Valueof ) :
+------------------------------------------------------
+
+* ParseInt :
+------------  
+  - Renvoie un type primitif int.
+  - Vous pouvez utiliser parseInt lorsque vous avez besoin d'une valeur primitive int.
+
+* ValueOf  :  
+------------
+  -  Renvoie un objet de type Integer, qui est la version objet de l'int.
+  -  Lorsque vous travaillez avec des collections ou dans des situations où un objet est préférable à un type primitif.
+
+* Exceptions : Les deux méthodes peuvent lancer une NumberFormatException si la chaîne n'est pas un nombre valide.
+
+=====================================================================================================================
+
+10)  : Array : 
+--------------
 
 
 
+
+
+
+
+
+=======================================================================================================================
+
+
+11) Utilisation l'object Scanner : 
+----------------------------------
+   * La classe Scanner est utilisée pour obtenir entrée de l'utilisateur, et elle se trouve dans le package java.util.
+   * Les method de la classe Scanner : 
+
+        - next()        : Lit et renvoie le prochain mot (chaîne de caractères sans espace) de l'entrée.
+        - nextBoolean() : Lit une valeur booléenne de l'utilisateur.
+        - nextByte()    : Lit une valeur d'octet de l'utilisateur.
+        - nextDouble()  : Lit une valeur double de l'utilisateur.
+        - nextFloat()   : Lit une valeur flottante de l'utilisateur.
+        - nextInt()     : Lit une valeur int de l'utilisateur.
+        - nextLine()    : Lit et renvoie la ligne entière (y compris les espaces) de l'entrée.
+        - nextLong()    : Lit une valeur longue de l'utilisateur.
+        - nextShort()   : Lit une valeur courte de l'utilisateur.
+        - close()       : Ferme le scanner et libère les ressources associées.
+
+  * Cet objet peut prendre différents paramètres, mais ici,nous n'en utiliserons qu'un. Celui qui correspond
+   justement à l'entrée standard en Java : System.in.
+  * Scanner s = new Scanner(Paramettre).
+    Paramettre :
+      - Scanner pour la console (System.in)   :  Lit à partir de la console standard (clavier). => Scanner scanner = new Scanner(System.in);
+      - Scanner pour une chaîne de caractères :  Lire à partir d'une chaîne de caractères.   => String maChaine = "Chaine";
+      - Scanner pour un fichier               :  Lire à partir de ce fichier (Fich.txt).   => File monFichier = new File("fichier.txt");
+      - Scanner pour une URL                  :  Lire à partir d'une URL.               => URL monURL = new URL("http://www.example.com");
+
+
+=======================================================================================================================
+
+12) 
